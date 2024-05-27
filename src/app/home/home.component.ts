@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { UsersService } from '../users.service';
+import { HttpClient } from '@angular/common/http';
+import { User } from '../interfaces/users.interface';  // Importa tu interfaz de usuario
 
 @Component({
   selector: 'app-home',
@@ -7,18 +8,14 @@ import { UsersService } from '../users.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  data: any;
+  data: User[] = [];
 
-  constructor(private userService: UsersService) {}
+  constructor(private http: HttpClient) { }
 
-  ngOnInit(): void {
-    this.userService.getUsers().subscribe({
-      next: (res) => {
-        this.data = res;
-      },
-      error: (err) => {
-        console.error(err);
-      }
-    });
+  ngOnInit() {
+    this.http.get<User[]>('https://api.example.com/users')  // Ajusta la URL de tu API
+      .subscribe(users => {
+        this.data = users;
+      });
   }
 }

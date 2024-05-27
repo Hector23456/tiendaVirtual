@@ -1,7 +1,8 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { ProductosComponent } from './productos/productos.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
-  // Puedes agregar más rutas aquí para otras páginas
+  { path: 'productos', component: ProductosComponent }
 ];
