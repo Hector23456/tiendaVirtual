@@ -1,10 +1,1 @@
-<div class="banner">
-  <img src="assets/banner.jpg" alt="Banner de la página">
-</div>
-<div *ngIf="data">
-  <ul>
-    <li *ngFor="let user of data">
-      {{ user.name }} - {{ user.email }}
-    </li>
-  </ul>
-</div>
+<app-list-person [persons]="users" (newUser)="addUserToList($event)" ></app-list-person>

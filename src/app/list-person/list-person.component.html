@@ -1,0 +1,6 @@
+<p>list-person works!</p>
+<input type="text" name="" [(ngModel)]="person" id="">
+<button (click)="addUser()">Agregar Usuario</button>
+<div class="persons" *ngFor="let item of persons">
+    {{item}}
+</div>

@@ -1,21 +1,26 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { User } from '../interfaces/users.interface';  // Importa tu interfaz de usuario
+import { ListPersonComponent } from '../list-person/list-person.component';
+import { CommonModule } from '@angular/common';  // Importa tu interfaz de usuario
 
 @Component({
   selector: 'app-home',
+  standalone: true,
+  imports: [CommonModule, ListPersonComponent],
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrl: './home.component.scss'
 })
-export class HomeComponent implements OnInit {
-  data: User[] = [];
-
-  constructor(private http: HttpClient) { }
-
-  ngOnInit() {
-    this.http.get<User[]>('https://api.example.com/users')  // Ajusta la URL de tu API
-      .subscribe(users => {
-        this.data = users;
-      });
-  }
+export class HomeComponent {
+  users= [
+      "Jhon",
+     "Maria",
+    "Admin",
+     "pirates",
+    "призрак",
+    ]
+    
+    addUserToList(user: string) {
+      console.log(user);
+      
+      this.users.push(user)
+    }
 }
