@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';  // Importa tu interfaz de usuar
   standalone: true,
   imports: [CommonModule, ListPersonComponent],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrl: './home.component.css'
 })
 export class HomeComponent {
   users= [
