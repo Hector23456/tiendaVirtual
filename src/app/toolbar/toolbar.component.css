@@ -1,0 +1,28 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden; /* Esto previene que la página se deslice horizontalmente */
+}
+
+.container{
+  width: 100%; /* Cambiar de 100vw a 100% */
+  display: flex;
+  background-color: rgb(22, 82, 20);
+  height: 60px;
+  justify-content: center; /* Cambiar flex-end a center para centrar los botones */
+  gap: 20px;
+  align-items: center;
+  box-sizing: border-box; /* Asegura que el padding y border se incluyan en el ancho total */
+}
+
+.button{
+  cursor: pointer;
+  padding: 10px;
+  background-color: rgba(128, 255, 0, 0.137);
+}
+
+.button:hover{
+  background-color: rgb(0, 255, 13);
+}
+
