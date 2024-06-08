@@ -1,0 +1,6 @@
+1) Revisar de poner las cards en el componente que creaste para ese fin.
+2) Renderizarlo en la pantalla componentes
+3) Los datos de la cards tiene que estar en el archivo card.ts para luego cambiar la información de entrada por lo que venga de la petición http
+4) Usar la directiva ngfor para crear una card y que se rendericen todos los datos en productos
+
+Hay que mejorarlo bastante recordá que queda 15 dias...
