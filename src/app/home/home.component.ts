@@ -1,26 +1,50 @@
-import { Component, OnInit } from '@angular/core';
-import { ListPersonComponent } from '../list-person/list-person.component';
-import { CommonModule } from '@angular/common';  // Importa tu interfaz de usuario
+import { Component, OnInit, inject } from '@angular/core';
+import { CardComponent } from '../card/card.component';
+import { DolarService } from '../services/dolar.service';
+import { DolarInterface } from '../interface/dolar.interface';
+import { CommonModule } from '@angular/common';
+import { UsersService } from '../services/users.service';
+import { Users } from '../interface/users.interface';
+import { ProductsService } from '../services/productos.service';
+import { ProducsArray, Product } from '../interface/productos';
+import { FormsModule } from '@angular/forms';
+
+
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, ListPersonComponent],
+  imports:[CardComponent, CommonModule, FormsModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent {
-  users= [
-      "Jhon",
-     "Maria",
-    "Admin",
-     "pirates",
-    "призрак",
-    ]
+export class HomeComponent implements OnInit{
+  data!: Product[];
+  loader:boolean =false
+  products= inject(ProductsService)
+  filteredData!: Product[]| null;
+  searchData:string ='';
+  constructor(private dolarService: DolarService, 
+    private users: UsersService){
     
-    addUserToList(user: string) {
-      console.log(user);
+  }
+  
+  ngOnInit(): void {
+    this.getAllProducts()
+   }
+
+  getAllProducts(){
+    this.products.getProducts().subscribe((res:ProducsArray)=>{
+    this.data = res.results
+
+    })
+  }
+
+  getFileteredPruducts(){
+    this.filteredData = this.data.filter((product: Product)=>{
       
-      this.users.push(user)
-    }
+      return product.nombre_producto.includes(this.searchData)
+
+    })
+  }
 }

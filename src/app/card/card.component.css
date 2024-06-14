@@ -1,0 +1,19 @@
+.card-container{
+  width: 100vw;
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+  }
+  .card{
+      width: 150px;
+      height: 260px;
+      border: 1px solid #bbb;
+      overflow: hidden;
+  }
+  
+  .img{
+      width: 150px;
+      height: 220px;
+      background-position: cover;
+      background-size: cover;
+  }

@@ -1,27 +1,10 @@
-<h1>Productos</h1>
+<h1>Delicias</h1>
 
-<div class="card-container">
-    <div class="card">
-        <img src="imagen-producto1.jpg" alt="Producto 1">
-        <h2>Auriculares Inalámbricos</h2>
-        <p>Auriculares con cancelación de ruido y sonido envolvente. Ideales para viajes y uso diario.</p>
-        <p class="price">$59.99</p>
-        <a href="#">Compra aquí</a>
-    </div>
-
-    <div class="card">
-        <img src="imagen-producto2.jpg" alt="Producto 2">
-        <h2>Smartwatch Deportivo</h2>
-        <p>Reloj inteligente con monitoreo de actividad física y notificaciones. Resistente al agua.</p>
-        <p class="price">$129.99</p>
-        <a href="#">Compra aquí</a>
-    </div>
-
-    <div class="card">
-        <img src="imagen-producto3.jpg" alt="Producto 3">
-        <h2>Tablet 10 pulgadas</h2>
-        <p>Tablet con pantalla de alta resolución, ideal para entretenimiento y trabajo.</p>
-        <p class="price">$299.99</p>
-        <a href="#">Compra aquí</a>
-    </div>
-</div>
+<div class="container">
+    <h3>Buscar</h3>
+    <label for="searchBox"></label>
+    <input type="text" name="searchBox" [(ngModel)]="searchData" (keyup)="getFileteredPruducts()" id="">
+    <app-card [list]="data" *ngIf="searchData==''" class="max"></app-card>
+    <app-card [list]="filteredData" *ngIf="searchData!=''" class="max"></app-card>
+    <span class="loader" *ngIf="loader"></span>
+  </div>
