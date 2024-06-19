@@ -1,15 +1,16 @@
 .banner {
     position: relative;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1000px;
     margin: auto;
     overflow: hidden;
     border: 2px solid #ddd;
     border-radius: 8px;
+    height: 60%;
   }
   .banner img {
     width: 100%;
-    height: auto;
+    height: 60%;
     display: block;
   }
   .banner-text {

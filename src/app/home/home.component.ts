@@ -22,8 +22,7 @@ export class HomeComponent implements OnInit{
   data!: Product[];
   loader:boolean =false
   products= inject(ProductsService)
-  filteredData!: Product[]| null;
-  searchData:string ='';
+  
   constructor(private dolarService: DolarService, 
     private users: UsersService){
     
@@ -34,16 +33,11 @@ export class HomeComponent implements OnInit{
    }
 
   getAllProducts(){
-    this.products.getProducts().subscribe((res:ProducsArray)=>{
+    this.products.getProducts().subscribe((res:ProducsArray)=>
+    {
     this.data = res.results
 
-    })
-  }
-
-  getFileteredPruducts(){
-    this.filteredData = this.data.filter((product: Product)=>{
-      
-      return product.nombre_producto.includes(this.searchData)
+   
 
     })
   }

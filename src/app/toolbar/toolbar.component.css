@@ -2,18 +2,19 @@ body, html {
   margin: 0;
   padding: 0;
   height: 100%;
-  overflow-x: hidden; /* Esto previene que la página se deslice horizontalmente */
+  overflow-x: hidden; 
+  background-color: aqua;
 }
 
 .container{
-  width: 100%; /* Cambiar de 100vw a 100% */
+  width: 100%; 
   display: flex;
   background-color: rgb(22, 82, 20);
   height: 60px;
-  justify-content: center; /* Cambiar flex-end a center para centrar los botones */
+  justify-content: center; 
   gap: 20px;
   align-items: center;
-  box-sizing: border-box; /* Asegura que el padding y border se incluyan en el ancho total */
+  box-sizing: border-box; 
 }
 
 .button{

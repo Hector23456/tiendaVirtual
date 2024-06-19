@@ -1,4 +1,3 @@
-
 export interface Product {
     categoria_id: number;
     created_at: Date;

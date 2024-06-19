@@ -25,7 +25,8 @@ export class CardComponent {
   
   
   getProduct(ev : number){
-    this.productService.getIndividualProduct(ev).subscribe((res: { results: any[]; })=>{
+    this.productService.getIndividualProduct(ev).subscribe((res: { results: any[]; })=>
+    {
       this.individualProduct= res.results[0]
   
     }
@@ -33,4 +34,4 @@ export class CardComponent {
     
   }
   
-  }
+}

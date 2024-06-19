@@ -3,17 +3,17 @@
   display: flex;
   gap: 50px;
   flex-wrap: wrap;
-  }
-  .card{
+}
+.card{
       width: 150px;
       height: 260px;
       border: 1px solid #bbb;
       overflow: hidden;
   }
   
-  .img{
+.img{
       width: 150px;
       height: 220px;
       background-position: cover;
       background-size: cover;
-  }
+}

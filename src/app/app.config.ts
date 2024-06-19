@@ -9,17 +9,18 @@ import { BrowserModule } from '@angular/platform-browser';
 NgModule({
   declarations: [
     AppComponent,
-    // otros componentes
+    
   ],
   imports: [
     BrowserModule,
-    // otros módulos
+   
   ],
   providers: [
-    provideHttpClient(withFetch())  // Configura HttpClient para usar fetch APIs
+    provideHttpClient(withFetch())  
   ],
   bootstrap: [AppComponent]
 })
+
 
 export const appConfig: ApplicationConfig = {
   providers: [provideRouter(routes), provideHttpClient()]
