@@ -1,19 +1,62 @@
-.layout-container{
-    position:fixed;
+.layout-container {
+    position: fixed;
     z-index: 10;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #4444445d;
+    background-color:  rgb(13, 90, 10);
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.modal{
+.modal {
     position: relative;
     height: 70vh;
     width: 70vw;
-    background-color: blanchedalmond;
+    max-width: 600px;
+    max-height: 80%;
+    background-color: rgb(13, 90, 10);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow-y: auto; 
+}
+
+.modal img {
+    justify-content: center;
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+.modal span {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 25px;
+    text-align: center;
+}
+
+
+button {
+    margin-top: 490px;
+    padding: 10px 20px;
+    background-color: #0e3b0b;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    position: absolute;
+    
+    right: 370px;
+}
+
+
+button:hover {
+    background-color: #0e9919;
 }
