@@ -14,10 +14,11 @@ import { ProductDetailComponent } from "../product-detail/product-detail.compone
     imports: [CommonModule, ProductDetailComponent]
 })
 export class CardComponent {
-  closeModal() {
-     this.individualProduct
+  closeModal() {    
+     this.individualProduct.id_producto=null
   }
   @Input()list!: any;
+  viewModal:boolean =false;
   individualProduct: any; 
   productService= inject(ProductsService)
   
@@ -25,10 +26,10 @@ export class CardComponent {
   
   
   getProduct(ev : number){
-    this.productService.getIndividualProduct(ev).subscribe((res: { results: any[]; })=>
+    this.productService.getIndividualProduct(ev).subscribe((res: any)=>
     {
       this.individualProduct= res.results[0]
-  
+      this.viewModal=true
     }
     )
     
